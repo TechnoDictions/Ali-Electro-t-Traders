@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Ali Electro Traders</title>
+    <link rel="stylesheet" href="css/sign-in.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>/* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Ubuntu', sans-serif;
+    }
+    
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .sign-in-form {
+        background: #fff;
+        padding: 2rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        max-width: 400px;
+        width: 100%;
+    }
+    
+    .sign-in-form h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-group input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+    
+    .btn {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: background-color 0.3s ease;
+    }
+    
+    .btn:hover {
+        background-color: #0056b3;
+    }
+    
+    .form-footer {
+        text-align: center;
+        margin-top: 1rem;
+    }
+    
+    .form-footer p {
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-footer a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .form-footer a:hover {
+        color: #0056b3;
+    }
+    
+    .google-signin {
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+    
+    .google-signin p {
+        margin-bottom: 1rem;
+        color: #888;
+    }
+    
+    .google-btn {
+        width: 98%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.75rem;
+        background-color: #fbfbfb;
+        color: #282828;
+        border: none;
+        border-radius: 20px;
+        border: 1px solid #888;
+        
+        text-decoration: none;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: width 0.5s ease;
+    }
+    
+    .google-btn:hover {
+        background-color: #ffffff;
+        color: #888;
+        width: 100%;
+    }
+    
+    .google-logo {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sign-in-form">
+            <h2>Sign In</h2>
+            <form action="login.php" method="POST" onsubmit="return validateSignInForm()">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Sign In</button>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="sign-up.html">Sign Up</a></p>
+                    <p><a href="forgot-password.html">Forgot Password?</a></p>
+                </div>
+            </form>
+            <div class="google-signin">
+                <p>or</p>
+                <a href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?client_id=386368453180-p587enhduqsj5i17d2ca9on64ol8ui5e.apps.googleusercontent.com&scope=openid%20email%20profile&redirect_uri=https%3A%2F%2Faccounts.firefox.com%2Fpost_verify%2Fthird_party_auth%2Fcallback&state=https%253A%252F%252Faccounts.firefox.com%252Foauth%252F%253Fresponse_type%253Dcode%2526client_id%253D720bc80adfa6988d%2526state%253DIWH0-pBVc3r6jQRjzv9oXg%2526redirect_uri%253Dhttps%25253A%25252F%25252Fdeveloper.mozilla.org%25252Fusers%25252Ffxa%25252Flogin%25252Fcallback%25252F%2526scope%253Dopenid%25252Bopenid%25252Bprofile%25252Bemail%25252Bprofile%25253Asubscriptions%2526access_type%253Doffline%2526nonce%253D7uI7RMcl8A9kUx8JKdv49A%2526flowId%253D6a3a43610d192c14e1632ca6fc8490bb8f1a6a898f57f7aa30edc4be7dd8e1ef%2526flowBeginTime%253D1726656083146%2526deviceId%253D86ac6f7dd51c468f8387691e34a0e451&access_type=offline&prompt=consent&response_type=code&disallow_webview=true&ack_webview_shutdown=2024-09-30&service=lso&o2v=2&ddm=0&flowName=GeneralOAuthFlow" class="google-btn">
+                    <img src="img/google.jpg" alt="Google Logo" class="google-logo">
+                    Continue with Google
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function validateSignInForm() {
+            // Add custom validation if needed
+            return true;
+        }
+    </script>
+</body>
+
+</html>
